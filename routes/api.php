@@ -34,8 +34,8 @@ Route::group([ 'prefix' => 'v1','namespace' => 'Api','middleware' => 'secretAPI'
             // start product
             Route::apiResource('product','ProductController');
 
-            // start product Excel
-            Route::post('product-excel','ProductController@productExcel');
+            //  start Dashboard
+            Route::get('detail','DashboardController@detail');
 
             // admin control
             Route::middleware('admin.api')->group(function(){

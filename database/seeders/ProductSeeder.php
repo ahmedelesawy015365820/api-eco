@@ -28,13 +28,13 @@ class ProductSeeder extends Seeder
                 'discription'           => $faker->paragraph,
                 'price'                 => $faker->numberBetween(5, 200),
                 'category_id'           => $categories->random(),
-                'active'                => true,
+                'active'                => rand(0,1),
                 'created_at'            => now(),
                 'updated_at'            => now(),
             ];
         }
 
-        $chunks = array_chunk($products, 100);
+        $chunks = array_chunk($products, 50);
         foreach ($chunks as $chunk) {
             Product::insert($chunk);
         }
